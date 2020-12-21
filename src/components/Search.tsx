@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { SearchContext } from "./SearchContext";
+import { SearchContext } from "../SearchContext";
 import SearchResults from "./SearchResults";
 
 

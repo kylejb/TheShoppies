@@ -1,4 +1,4 @@
-import ShoppiesContainer from "./ShoppiesContainer";
+import ShoppiesContainer from "./containers/ShoppiesContainer";
 
 
 const App = () => {

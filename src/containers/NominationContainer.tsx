@@ -1,4 +1,4 @@
-import NominationResults from "./NominationResults"
+import NominationResults from "../components/NominationResults";
 
 const NominationContainer = () => {
     return (
