@@ -46,11 +46,13 @@ const Search = () => {
     
     return (
         <form>
-            <input 
-                name="search" 
-                placeholder="Search by movie title..." 
-                value={query} 
-                onChange={inputChangeHandler} 
+            <input
+                type="search"
+                name="search"
+                placeholder="Search by movie title..."
+                value={query}
+                onChange={inputChangeHandler}
+                aria-label="Search OMDB API for movies by title"
             />
             <Dropdown results={results} />
         </form>
