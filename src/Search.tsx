@@ -46,7 +46,12 @@ const Search = () => {
     
     return (
         <form>
-            <input value={query} onChange={inputChangeHandler} />
+            <input 
+                name="search" 
+                placeholder="Search by movie title..." 
+                value={query} 
+                onChange={inputChangeHandler} 
+            />
             <Dropdown results={results} />
         </form>
     );
