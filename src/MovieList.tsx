@@ -1,7 +1,7 @@
 import MovieCard from "./MovieCard";
 
 
-const SearchSuggestions = (props: any) => {
+const MovieList = (props: any) => {
     const options = props.results?.map( (m: any) => (
         <MovieCard 
             key={m.imdbID} 
@@ -14,7 +14,7 @@ const SearchSuggestions = (props: any) => {
         <div>
             {options}
         </div>
-    )
-}
+    );
+};
 
-export default SearchSuggestions;
+export default MovieList;

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
+import NominationResults from './NominationResults';
 import { SearchContext } from './SearchContext';
-import Dropdown from './Dropdown';
+import SearchResults from './SearchResults';
 
 
 interface IResults {
@@ -48,7 +49,8 @@ const Search = () => {
 
     
     return (
-        <form>
+        <>
+        <div className="search-form">
             <input
                 type="search"
                 name="s"
@@ -58,8 +60,10 @@ const Search = () => {
                 aria-label="Search OMDB API for movies by title"
             />
             {totalResults} results
-            <Dropdown results={results} />
-        </form>
+            <SearchResults results={results} />
+        </div>
+        <NominationResults />
+        </>
     );
 };
 
