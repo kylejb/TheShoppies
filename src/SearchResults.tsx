@@ -1,6 +1,6 @@
-import { useContext } from 'react';
-import { SearchContext } from './SearchContext';
-import MovieList from './MovieList';
+import { useContext } from "react";
+import { SearchContext } from "./SearchContext";
+import MovieList from "./MovieList";
 
 
 const SearchResults = (props: any) => {
@@ -9,7 +9,7 @@ const SearchResults = (props: any) => {
     const { searchState } = searchctx;
 
     return (
-        <div className='container'>
+        <div className="container-results">
             { searchState.isSearching ? <MovieList results={props.results} /> : null }
         </div>
     );

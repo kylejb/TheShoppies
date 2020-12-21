@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 class ErrorBoundary extends React.Component<{}, {error: boolean | null, errorInfo: string | null}> {
     constructor(props: any) {

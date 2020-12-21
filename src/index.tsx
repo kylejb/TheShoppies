@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import { SearchProvider } from './SearchContext';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { SearchProvider } from "./SearchContext";
 
 
 ReactDOM.render(
@@ -10,5 +10,5 @@ ReactDOM.render(
             <App />
         </SearchProvider>
     </React.StrictMode>,
-    document.getElementById('root')
+    document.getElementById("root")
 );
