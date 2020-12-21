@@ -28,7 +28,7 @@ const Search = () => {
         const fetchMovies = async () => {
             const response = await fetch(`${BASE_API_EP}&type=movie&s=${query}`);
             const json = await response.json();
-            console.log(json)
+
             switch (json.Response) {
                 case "True":
                     setResults(json.Search);
