@@ -1,12 +1,13 @@
 import { createContext, useState } from 'react';
 
 
-type SearchContextState = { isSearching: boolean }
+type SearchContextState = { isSearching: boolean };
 
 const appCtxDefaultValue = {
     searchState: { isSearching: false },
     setSearchState: (searchState: SearchContextState ) => {}
-}
+};
+
 
 export const SearchContext = createContext(appCtxDefaultValue);
 
@@ -21,5 +22,5 @@ export const SearchProvider = (props: any) => {
         }}>
             {props.children}
         </SearchContext.Provider>
-    )
-}
+    );
+};
