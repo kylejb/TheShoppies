@@ -1,11 +1,11 @@
-import Search from './Search';
+import ShoppiesContainer from "./ShoppiesContainer";
 
 
 const App = () => {
     return (
         <div className="app">
-            <h1>The Shoppies</h1>
-            <Search />
+            <h1>App</h1>
+            <ShoppiesContainer />
         </div>
     );
 };

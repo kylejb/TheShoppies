@@ -1,6 +1,8 @@
 const NominationResults = () => {
     return (
-        <h1>Nomination Results</h1>
+        <div className="container-results">
+            <h1>Nomination Results</h1>
+        </div>
     );
 };
 

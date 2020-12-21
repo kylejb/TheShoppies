@@ -1,7 +1,6 @@
-import { useContext, useEffect, useState } from 'react';
-import NominationResults from './NominationResults';
-import { SearchContext } from './SearchContext';
-import SearchResults from './SearchResults';
+import { useContext, useEffect, useState } from "react";
+import { SearchContext } from "./SearchContext";
+import SearchResults from "./SearchResults";
 
 
 interface IResults {
@@ -60,9 +59,8 @@ const Search = () => {
                 aria-label="Search OMDB API for movies by title"
             />
             {totalResults} results
-            <SearchResults results={results} />
         </div>
-        <NominationResults />
+            <SearchResults results={results} />
         </>
     );
 };

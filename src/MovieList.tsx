@@ -10,11 +10,7 @@ const MovieList = (props: any) => {
     );
 
 
-    return (
-        <div>
-            {options}
-        </div>
-    );
+    return <>{options}</>;
 };
 
 export default MovieList;
