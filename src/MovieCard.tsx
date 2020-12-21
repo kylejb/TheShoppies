@@ -13,6 +13,12 @@ const MovieCard = ( { movie }: IMovie ) => {
             <img src={movie.Poster} alt={movie.Title}></img>
             {movie.Title}
             {movie.Year}
+            <button 
+                type="button" 
+                onClick={()=> console.log("Nominated")}
+            >
+                Nominate Me
+            </button>
         </div>
     );
 };
