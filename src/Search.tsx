@@ -3,12 +3,12 @@ import { SearchContext } from './SearchContext';
 import Dropdown from './Dropdown';
 
 
-const BASE_API_EP = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`;
-
-
 interface IResults {
     Search: Array<String>;  
 };
+
+
+const BASE_API_EP = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`;
 
 
 const Search = () => {
