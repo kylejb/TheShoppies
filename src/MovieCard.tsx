@@ -1,11 +1,20 @@
-const MovieCard = (props: any) => {
+interface IMovie {
+    movie: {
+        Title: string;
+        Poster: string;
+        Year: string;
+    };
+};
+
+
+const MovieCard = ( { movie }: IMovie ) => {
     return (
         <div className="moviecard">
-            <img src={props.movie.Poster} alt={props.movie.Title}></img>
-            {props.movie.Title}
-            {props.movie.Year}
+            <img src={movie.Poster} alt={movie.Title}></img>
+            {movie.Title}
+            {movie.Year}
         </div>
-    )
-}
+    );
+};
 
 export default MovieCard;
