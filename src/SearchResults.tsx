@@ -5,8 +5,8 @@ import MovieList from "./MovieList";
 
 const SearchResults = (props: any) => {
     const searchctx = useContext(SearchContext);
-
     const { searchState } = searchctx;
+
 
     return (
         <div className="container-results">
