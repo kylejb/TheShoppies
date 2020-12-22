@@ -5,18 +5,19 @@ import MovieCard from './MovieCard';
 
 const NominationResults = () => {
     const searchctx = useContext(SearchContext),
-    { nominated } = searchctx;
+    { nominated, removeNominated } = searchctx;
 
     const renderNominated = nominated.map((movie: any) => {
+
         return (
-            <MovieCard key={movie.imdbID} movie={movie} />
-        )
-    })
+            <MovieCard key={"NR_" + movie.imdbID} movie={movie} button={removeNominated} />
+        );
+    });
 
     return (
         <div className="container-results">
             <h1>Nomination Results</h1>
-            { nominated.length > 1 ? renderNominated : null }
+            { nominated.length > 0 ? renderNominated : null }
         </div>
     );
 };
