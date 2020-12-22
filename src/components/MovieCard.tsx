@@ -1,3 +1,6 @@
+import { useState } from "react";
+
+
 interface IMovie {
     movie: {
         Title: string;
@@ -8,14 +11,18 @@ interface IMovie {
 
 
 const MovieCard = ( { movie }: IMovie ) => {
+    const [ selected, setSelected ] = useState(false);
+
+
     return (
         <div className="moviecard">
             <img src={movie.Poster} alt={movie.Title}></img>
             {movie.Title}
             {movie.Year}
-            <button 
-                type="button" 
-                onClick={()=> console.log("Nominated")}
+            <button
+                type="button"
+                onClick={()=> setSelected(!selected)}
+                disabled={selected}
             >
                 Nominate Me
             </button>
