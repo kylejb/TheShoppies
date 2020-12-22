@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { SearchContext } from "../SearchContext";
 
 
 interface IMovie {
@@ -13,6 +14,8 @@ interface IMovie {
 const MovieCard = ( { movie }: IMovie ) => {
     const [ selected, setSelected ] = useState(false);
 
+    const searchctx = useContext(SearchContext),
+        { setNominated } = searchctx;
 
     return (
         <div className="moviecard">
@@ -21,7 +24,10 @@ const MovieCard = ( { movie }: IMovie ) => {
             {movie.Year}
             <button
                 type="button"
-                onClick={()=> setSelected(!selected)}
+                onClick={()=> {
+                    setSelected(!selected)
+                    setNominated( (prevState: any) => [...prevState, movie] )
+                }}
                 disabled={selected}
             >
                 Nominate Me

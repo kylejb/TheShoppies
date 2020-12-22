@@ -1,23 +1,25 @@
 import { createContext, useState } from "react";
 
 
-type SearchContextState = { isSearching: boolean };
-
-const appCtxDefaultValue = {
+const searchCtxDefaultValue = {
     searchState: { isSearching: false },
-    setSearchState: (searchState: SearchContextState ) => {}
+    nominated: ["defaultValue"],
+    setSearchState: (searchState: { isSearching: boolean }) => {},
+    setNominated: (nominated: any) => {}
 };
 
-
-export const SearchContext = createContext(appCtxDefaultValue);
+export const SearchContext = createContext(searchCtxDefaultValue);
 
 
 export const SearchProvider = (props: any) => {
-    const [searchState, setSearchState] = useState(appCtxDefaultValue.searchState);
+    const [searchState, setSearchState] = useState(searchCtxDefaultValue.searchState);
+    const [nominated, setNominated] = useState(searchCtxDefaultValue.nominated);
 
     return (
         <SearchContext.Provider value={{
             searchState,
+            nominated,
+            setNominated,
             setSearchState
         }}>
             {props.children}

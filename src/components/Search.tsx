@@ -17,7 +17,7 @@ const Search = () => {
         [results, setResults] = useState<IResults[]>([]);
           
     const searchctx = useContext(SearchContext),
-        { setSearchState } = searchctx;
+        { setSearchState, setNominated } = searchctx;
 
     const inputChangeHandler = (e: React.BaseSyntheticEvent) => {
         setQuery(e.target.value);
@@ -41,10 +41,10 @@ const Search = () => {
             };
         };
         if (query.length >= 3) {
-            setSearchState({isSearching: true});
+            setSearchState({ isSearching: true });
             fetchMovies();
         };
-    }, [query, setResults, setSearchState]);
+    }, [query, setResults, setSearchState, setNominated]);
 
     
     return (
