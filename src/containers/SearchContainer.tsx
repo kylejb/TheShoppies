@@ -1,9 +1,10 @@
 import Search from "../components/Search";
+import "../styles/containers/SearchContainer/style.scss";
 
 
 const SearchContainer = () => {
     return (
-        <div className="container">
+        <div className="wrapper-search">
             <h1>Search Container</h1>
             <Search />
         </div>
