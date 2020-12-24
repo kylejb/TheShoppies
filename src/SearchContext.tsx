@@ -16,8 +16,8 @@ export const SearchProvider = (props: any) => {
     const [searchState, setSearchState] = useState(searchCtxDefaultValue.searchState);
     const [nominated, setNominated] = useState(searchCtxDefaultValue.nominated);
 
-    const removeNominated = (z: any) => {
-        const newNominatedState = nominated.filter(m=> m!==z([1])[1]);
+    const removeNominated = (btnToggleCallBack: any) => {
+        const newNominatedState = nominated.filter(movie => movie !== btnToggleCallBack([-1])[1]);
         setNominated(newNominatedState);
     };
 
