@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { SearchContext } from "../SearchContext";
 import MovieCard from './MovieCard';
+import NominateButton from "./NominateButton";
 
 
 const NominationResults = () => {
@@ -8,16 +9,21 @@ const NominationResults = () => {
     { nominated, removeNominated } = searchctx;
 
     const renderNominated = nominated.map((movie: any) => {
-
         return (
-            <MovieCard key={"NR_" + movie.imdbID} movie={movie} button={removeNominated} />
+            <>
+            <MovieCard key={"NR_" + movie.imdbID} movie={movie} />
+            <NominateButton btnDisable={false} btnToggle={removeNominated} movie={movie} />
+            </>
         );
     });
 
+    
     return (
         <div className="container-results">
             <h1>Nomination Results</h1>
-            { nominated.length > 0 ? renderNominated : null }
+            <div className="moviecard">
+                { nominated.length > 0 ? renderNominated : null }
+            </div>
         </div>
     );
 };

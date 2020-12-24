@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { SearchContext } from "../SearchContext";
 import MovieCard from "./MovieCard";
+import NominateButton from "./NominateButton";
 
 
 const MovieList = (props: any) => {
@@ -12,29 +13,24 @@ const MovieList = (props: any) => {
     const options = () => {
         return props.results?.map( (m: any) => {
             if (filteredOptions.includes(m.imdbID)) {
-                /*
-                TODO - refactor the below, and optimize state & context hooks.
-                */
                 return (
                     <div className="moviecard">
-                        <img src={m.Poster} alt={m.Title}></img>
-                        {m.Title}
-                        {m.Year}
-                        <button
-                            type="button"
-                            disabled={true}
-                        >
-                            Nominate Me
-                        </button>
+                        <MovieCard
+                            key={"ML_" + m.imdbID}
+                            movie={m}
+                        />
+                        <NominateButton btnDisable={true} btnToggle={setNominated} movie={m} />
                     </div>
                 );
             } else {
                 return (
-                    <MovieCard
-                        key={"ML_" + m.imdbID}
-                        movie={m}
-                        button={setNominated}
-                    />
+                    <div className="moviecard">
+                        <MovieCard
+                            key={"NR_" + m.imdbID}
+                            movie={m}
+                        />
+                        <NominateButton btnDisable={false} btnToggle={setNominated} movie={m} />
+                    </div>
                 );
             };
         });
