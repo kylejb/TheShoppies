@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { addMovie } from "../redux/actionCreators";
 import Search from "../components/Search";
 import "../styles/containers/SearchContainer/style.scss";
 
@@ -21,7 +22,7 @@ const mapStateToProps = (state: any) => {
 };
 
 const mapDispatchToProps = ( dispatch: any ) => {
-    return { nominateHandler: ( movieObj: any ) => dispatch( { type: "ADD MOVIE", payload: movieObj })}
+    return { nominateHandler: ( movieObj: any ) => dispatch(addMovie(movieObj))}
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchContainer);
