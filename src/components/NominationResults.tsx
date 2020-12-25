@@ -1,19 +1,19 @@
 import { useContext } from "react";
 import { SearchContext } from "../SearchContext";
 import MovieCard from './MovieCard';
-import NominateButton from "./NominateButton";
 
 
 const NominationResults = () => {
     const searchctx = useContext(SearchContext),
-    { nominated, removeNominated } = searchctx;
+    { nominated } = searchctx;
 
     const renderNominated = nominated.map((movie: any) => {
         return (
-            <>
-            <MovieCard key={"NR_" + movie.imdbID} movie={movie} />
-            <NominateButton btnDisable={false} btnToggle={removeNominated} movie={movie} />
-            </>
+            <MovieCard 
+                key={"NR_" + movie.imdbID} 
+                id={"NR_" + movie.imdbID} 
+                movie={movie} 
+            />
         );
     });
 

@@ -5,7 +5,9 @@ interface IButtonProps {
     btnDisable: boolean;
     btnToggle: (nominated: any) => void;
     movie: any;
+    btnInnerHTML: string;
 };
+
 
 const NominateButton = (props: IButtonProps) => {
     const [ selected, setSelected ] = useState(false);
@@ -13,14 +15,14 @@ const NominateButton = (props: IButtonProps) => {
 
     return (
         <button
-            type="button"
-            onClick={()=> {
-                setSelected(!selected)
-                props.btnToggle( (prevState: any) => [...prevState, props.movie] )
+            onClick={()=>{
+                setSelected(!selected);
+                props.btnToggle( (prevState: any) => [...prevState, props.movie] );
             }}
+            type="button"
             disabled={props.btnDisable}
         >
-            Nominate Me
+            {props.btnInnerHTML}
         </button>
     );
 };
