@@ -3,7 +3,7 @@ import { SearchContext } from "../SearchContext";
 import MovieCard from './MovieCard';
 
 
-const NominationResults = () => {
+const NominationResults = (props: any) => {
     const searchctx = useContext(SearchContext),
     { nominated } = searchctx;
 
