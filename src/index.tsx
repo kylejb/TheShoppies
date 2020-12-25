@@ -3,22 +3,31 @@ import ReactDOM from "react-dom";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import App from "./App";
-// import { SearchProvider } from "./SearchContext";
 import "./styles/base.scss";
 
 
-const rootReducer = () => { return { nominated: [] }}
+const rootReducer = (currentState: any = {nominated: []}, action: any) => {
+    console.log("reducercurrentState ", currentState);
+    console.log("reducerAction ", action);
+    switch (action.type) {
+        case "ADD MOVIE":
+            console.log("rootRed:::ADD Mov");
+            return {...currentState, nominated: [...currentState.nominated, action.payload]};
+        case "REMOVE MOVIE":
+            console.log("rootRed:::REMOVE Mov");
+            return currentState.filter((movieObj: any) => movieObj.imdbID !== action.payload.id);
+        default:
+            return currentState;
+    };
+};
 
 const store = createStore(rootReducer);
 
-console.log("STORE", store.getState())
 
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
-            {/* <SearchProvider> */}
             <App />
-            {/* </SearchProvider> */}
         </Provider>
     </React.StrictMode>,
     document.getElementById("root")
