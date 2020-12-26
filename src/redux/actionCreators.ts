@@ -8,7 +8,6 @@ export const addMovie = ( content: IMovie ) => ({
 
 
 const BASE_API_EP = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`;
-
 export const getMovies = () => {
     return async function ( dispatch: any ) {
         let response = await fetch(`${BASE_API_EP}&type=movie&s=${"star"}`);
