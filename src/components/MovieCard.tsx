@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { SearchContext } from "../SearchContext";
 import NominateButton from "./NominateButton"
 
 
@@ -15,10 +13,6 @@ interface IMovie {
 
 
 const MovieCard = ( props: IMovie ) => {
-    const searchctx = useContext(SearchContext),
-    { setNominated, removeNominated } = searchctx;
-
-
     const containerIdentifier = () => {
         const containerIdentifer = props.id.split('_')[0]
         switch (containerIdentifer) {
@@ -37,12 +31,12 @@ const MovieCard = ( props: IMovie ) => {
             <img src={props.movie.Poster} alt={props.movie.Title}></img>
             {props.movie.Title}
             {props.movie.Year}
-            <NominateButton
+            {/* <NominateButton
                 btnDisable={props.btnDisable || false} 
                 btnToggle={containerIdentifier() ? setNominated : removeNominated } 
                 movie={props.movie} 
                 btnInnerHTML={ containerIdentifier() ? "Nominate Me!" : "Remove Me" } 
-            />
+            /> */}
         </div>
     );
 };

@@ -1,13 +1,8 @@
-import { useContext } from "react";
-import { SearchContext } from "../SearchContext";
 import MovieCard from './MovieCard';
 
 
 const NominationResults = (props: any) => {
-    const searchctx = useContext(SearchContext),
-    { nominated } = searchctx;
-
-    const renderNominated = nominated.map((movie: any) => {
+    const renderNominated = props?.nominated?.map((movie: any) => {
         return (
             <MovieCard 
                 key={"NR_" + movie.imdbID} 
@@ -22,7 +17,7 @@ const NominationResults = (props: any) => {
         <div className="container-results">
             <h1>Nomination Results</h1>
             <div className="moviecard">
-                { nominated.length > 0 ? renderNominated : null }
+                {/* { props?.nominated?.length > 0 ? renderNominated : null } */}
             </div>
         </div>
     );
