@@ -22,7 +22,7 @@ const MovieCard = ( props: IMovie ) => {
                 return false
             default:
                 break;
-        }
+        };
     };
    
 

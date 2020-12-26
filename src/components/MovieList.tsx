@@ -15,4 +15,3 @@ const MovieList = (props: any) => {
 };
     
 export default MovieList;
-    
