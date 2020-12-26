@@ -10,7 +10,9 @@ const Search = (props: any) => {
 
     const fetchMovies = props.fetchMovies;
     useEffect(() => {
-        fetchMovies(query);
+        if (query.length >= 3){
+            fetchMovies(query);
+        }
     }, [query, fetchMovies]);
 
 
