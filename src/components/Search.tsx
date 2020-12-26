@@ -1,41 +1,39 @@
 import { connect } from "react-redux";
-import { addMovie } from "../redux/actionCreators";
+import { getMovies } from "../redux/actionCreators";
 import { useEffect, useState } from "react";
 import SearchResults from "./SearchResults";
 
 
-const Search = () => {
+const Search = (props: any) => {
     const [query, setQuery] = useState("");
 
 
-    const inputChangeHandler = (e: React.BaseSyntheticEvent) => {
-        setQuery(e.target.value);
-    };
-
+    const fetchMovies = props.fetchMovies;
     useEffect(() => {
+        fetchMovies(query);
+    }, [query, fetchMovies]);
 
-    }, [])
-    
+
     return (
         <>
-        <div className="search-form">
-            <input
-                type="search"
-                name="s"
-                placeholder="Search by movie title..."
-                value={query}
-                onChange={inputChangeHandler}
-                aria-label="Search OMDB API for movies by title"
-            />
-            {"NUM"} results
-        </div>
-            <SearchResults results={""} />
+            <div className="search-form">
+                <input
+                    type="search"
+                    name="s"
+                    placeholder="Search by movie title..."
+                    value={query}
+                    onChange={(e: React.BaseSyntheticEvent) => setQuery(e.target.value)}
+                    aria-label="Search OMDB API for movies by title"
+                />
+            </div>
+                {props?.results?.metaData?.totalResults} results
+                <SearchResults results={props.results.movies} />
         </>
     );
 };
 
 const mapDispatchToProps = ( dispatch: any ) => {
-    return { nominateHandler: ( movieObj: any ) => dispatch(addMovie(movieObj))}
+    return { fetchMovies: (userQuery: any) => dispatch(getMovies(userQuery))}
 };
 
 export default connect(null, mapDispatchToProps)(Search);
