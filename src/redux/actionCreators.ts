@@ -8,22 +8,26 @@ export const addMovie = ( content: IMovie ) => ({
 
 
 const BASE_API_EP = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`;
-export const getMovies = () => {
+export const getMovies = (userQuery: any) => {
+    const url = `${BASE_API_EP}&s=${userQuery}`
     return async function ( dispatch: any ) {
-        let response = await fetch(`${BASE_API_EP}&type=movie&s=${"star"}`);
+        let response = await fetch(url);
         let json = await response.json();
         dispatch({ type: FETCH_MOVIES, payload: json });            
     };
 };
 
 
-// switch (json.Response) {
-//     case "True":
-//         setResults(json.Search);
-//         setTotalResults(json.totalResults);
-//         break; 
-//     default:
-//         setTotalResults("0");
-//         //* DEFAULT SWITCH >> Render Msg for user on page
-//         break;
-// };
+/*
+? Error Handling from useContext Provider Version
+switch (json.Response) {
+    case "True":
+        setResults(json.Search);
+        setTotalResults(json.totalResults);
+        break; 
+    default:
+        setTotalResults("0");
+        ? Render Msg for user on page
+        break;
+}; 
+*/
