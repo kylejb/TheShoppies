@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { getMovies } from "../redux/actionCreators";
 import Search from "../components/Search";
+import SearchResults from "../components/SearchResults";
 import "../styles/containers/SearchContainer/style.scss";
 
 
@@ -10,6 +11,8 @@ const SearchContainer = ( props: any ) => {
         <div className="wrapper-search">
             <h1>Search Container</h1>
             <Search results={props.search} />
+            <SearchResults results={props.search} />
+
         </div>
     );
 };

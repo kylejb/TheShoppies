@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
 import { getMovies } from "../redux/actionCreators";
 import { useEffect, useState } from "react";
-import SearchResults from "./SearchResults";
 
 
 const Search = (props: any) => {
@@ -27,9 +26,8 @@ const Search = (props: any) => {
                     onChange={(e: React.BaseSyntheticEvent) => setQuery(e.target.value)}
                     aria-label="Search OMDB API for movies by title"
                 />
-            </div>
                 {props?.results?.metaData?.totalResults} results
-                <SearchResults results={props.results.movies} />
+            </div>
         </>
     );
 };
