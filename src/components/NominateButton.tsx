@@ -1,14 +1,6 @@
 import { useState } from "react";
 
 
-interface IButtonProps {
-    btnDisable: boolean;
-    btnToggle: (nominated: any) => void;
-    movie: any;
-    btnInnerHTML: string;
-};
-
-
 const NominateButton = (props: IButtonProps) => {
     const [ selected, setSelected ] = useState(false);
 

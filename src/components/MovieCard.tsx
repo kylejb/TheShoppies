@@ -1,42 +1,10 @@
-import NominateButton from "./NominateButton"
-
-
-interface IMovie {
-    id: string;
-    movie: {
-        Title: string;
-        Poster: string;
-        Year: string;
-    };
-    btnDisable?: any;
-};
-
-
-const MovieCard = ( props: IMovie ) => {
-    const containerIdentifier = () => {
-        const containerIdentifer = props.id.split('_')[0]
-        switch (containerIdentifer) {
-            case "ML":
-                return true
-            case "NR":
-                return false
-            default:
-                break;
-        };
-    };
-   
-
+const MovieCard = ( { movie, movieHandler }: IMovie ) => {
     return (
         <div className="moviecard">
-            <img src={props.movie.Poster} alt={props.movie.Title}></img>
-            {props.movie.Title}
-            {props.movie.Year}
-            {/* <NominateButton
-                btnDisable={props.btnDisable || false} 
-                btnToggle={containerIdentifier() ? setNominated : removeNominated } 
-                movie={props.movie} 
-                btnInnerHTML={ containerIdentifier() ? "Nominate Me!" : "Remove Me" } 
-            /> */}
+            <img src={movie.Poster} alt={movie.Title}></img>
+            {movie.Title}
+            {movie.Year}
+            <button type="button" onClick={(e) => movieHandler(movie)}>Nominate Me!</button>
         </div>
     );
 };
