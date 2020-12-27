@@ -2,7 +2,7 @@ import { ADD_MOVIE, REMOVE_MOVIE } from "../actionTypes";
 
 const initialState: MovieState = {
     nominated: []
-}
+};
 
 const movieReducer = (currentState = initialState, action: any) => {
     switch (action.type) {
