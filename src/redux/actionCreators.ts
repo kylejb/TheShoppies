@@ -11,9 +11,10 @@ export const removeMovie = ( content: Movie ) => ({
     payload: content
 });
 
-const BASE_API_EP = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`;
+const BASE_API_EP = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`;
 export const getMovies = (userQuery: string) => {
-    const url = `${BASE_API_EP}&s=${userQuery}`
+    const cleanedUserQuery = userQuery.trim();
+    const url = `${BASE_API_EP}&s=${cleanedUserQuery}`;
     return async function ( dispatch: any ) {
         let response = await fetch(url);
         let json = await response.json();
