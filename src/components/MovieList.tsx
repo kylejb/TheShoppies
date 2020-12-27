@@ -4,11 +4,10 @@ import MovieCard from "./MovieCard";
 
 
 const MovieList = (props: any) => {
-    return props.results?.movies.map( (m: any) => {
+    return props.results?.movies.map( (m: Movie) => {
         return (
             <MovieCard
                 key={m.imdbID}
-                id={m.imdbID}
                 movie={m}
                 movieHandler={props.movieHandler}
             />
