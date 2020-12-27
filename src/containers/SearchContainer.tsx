@@ -5,7 +5,6 @@ import "../styles/containers/SearchContainer/style.scss";
 
 
 const SearchContainer = ( props: any ) => {
-    console.log("searchContainer PROPS ", props)
     return (
         <div className="wrapper-search">
             <h1>Search Container</h1>
