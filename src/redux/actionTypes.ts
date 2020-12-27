@@ -1,3 +1,3 @@
-export const ADD_MOVIE = "ADD_MOVIE";
-export const REMOVE_MOVIE = "REMOVE_MOVIE";
-export const FETCH_MOVIES = "FETCH_MOVIES";
+export const ADD_MOVIE: string = "ADD_MOVIE";
+export const REMOVE_MOVIE: string = "REMOVE_MOVIE";
+export const FETCH_MOVIES: string = "FETCH_MOVIES";
