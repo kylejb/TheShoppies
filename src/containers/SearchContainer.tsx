@@ -10,7 +10,6 @@ const SearchContainer = ( props: any ) => {
             <h1>Search Container</h1>
             <Search results={props.search} />
             <SearchResults results={props.search} />
-
         </div>
     );
 };
