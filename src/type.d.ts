@@ -1,8 +1,19 @@
+interface IButtonProps {
+    btnDisable: boolean;
+    btnToggle: (nominated: any) => void;
+    movie: any;
+    btnInnerHTML: string;
+};
+
 interface IMovie {
     id: string;
-    Title: string;
-    Poster: string;
-    Year: string;
+    movie: {
+        imdbID: string;
+        Title: string;
+        Poster: string;
+        Year: string;
+    };
+    movieHandler?: any;
 };
 
 type MovieState = {
