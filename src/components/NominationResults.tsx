@@ -2,11 +2,10 @@ import MovieCard from './MovieCard';
 
 
 const NominationResults = (props: any) => {
-    const renderNominated = props?.nominated?.map((movie: any) => {
+    const renderNominated = props?.nominated?.map((movie: Movie) => {
         return (
             <MovieCard 
                 key={movie.imdbID} 
-                id={movie.imdbID} 
                 movie={movie} 
                 movieHandler={props.movieHandler}
             />
@@ -17,7 +16,7 @@ const NominationResults = (props: any) => {
     return (
         <div className="container-results">
             <h1>Nomination Results</h1>
-            { props.nominated ? renderNominated : null }
+            { renderNominated }
         </div>
     );
 };
