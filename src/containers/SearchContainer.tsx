@@ -1,5 +1,4 @@
 import { connect } from "react-redux";
-import { getMovies } from "../redux/actionCreators";
 import Search from "../components/Search";
 import SearchResults from "../components/SearchResults";
 import "../styles/containers/SearchContainer/style.scss";
@@ -22,8 +21,4 @@ const mapStateToProps = (state: any) => {
     return { search: state.search };
 };
 
-const mapDispatchToProps = ( dispatch: any ) => {
-    return { fetchMovies: () => dispatch(getMovies("Lion"))}
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(SearchContainer);
+export default connect(mapStateToProps)(SearchContainer);

@@ -2,7 +2,7 @@ interface IMovie {
     id: string;
     Title: string;
     Poster: string;
-    Year: string; 
+    Year: string;
 };
 
 type MovieState = {
