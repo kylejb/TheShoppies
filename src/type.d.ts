@@ -1,23 +1,22 @@
-interface IButtonProps {
-    btnDisable: boolean;
-    btnToggle: (nominated: any) => void;
-    movie: any;
-    btnInnerHTML: string;
-};
-
-interface IMovie {
-    id: string;
+interface IMovieComProp {
     movie: {
         imdbID: string;
         Title: string;
         Poster: string;
         Year: string;
     };
-    movieHandler?: any;
+    movieHandler: (movieObj: IMovieComProp["movie"]) => void;
 };
 
-type MovieState = {
-    movie: IMovie[];
+type Movie = {
+    imdbID: string;
+    Title: string;
+    Poster: string;
+    Year: string;
+};
+
+interface MovieState {
+    nominated: Movie[]
 };
 
 type MovieAction = {

@@ -1,4 +1,4 @@
-const MovieCard = ( { movie, movieHandler }: IMovie ) => {
+const MovieCard = ( { movie, movieHandler }: IMovieComProp ) => {
     return (
         <div className="moviecard">
             <img src={movie.Poster} alt={movie.Title}></img>

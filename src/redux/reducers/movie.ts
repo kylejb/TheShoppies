@@ -1,7 +1,10 @@
 import { ADD_MOVIE, REMOVE_MOVIE } from "../actionTypes";
 
+const initialState: MovieState = {
+    nominated: []
+}
 
-const movieReducer = (currentState: any = {nominated: []}, action: any) => {
+const movieReducer = (currentState = initialState, action: any) => {
     switch (action.type) {
         case ADD_MOVIE:
             return {
@@ -11,7 +14,7 @@ const movieReducer = (currentState: any = {nominated: []}, action: any) => {
         case REMOVE_MOVIE:
             return {
                 ...currentState,
-                nominated: currentState.nominated.filter( (movieObj: any) => movieObj.imdbID !== action.payload.imdbID)
+                nominated: currentState.nominated.filter( (movieObj: Movie) => movieObj.imdbID !== action.payload.imdbID)
             };
         default:
             return currentState;

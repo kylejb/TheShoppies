@@ -1,18 +1,18 @@
 import { ADD_MOVIE, REMOVE_MOVIE, FETCH_MOVIES } from "./actionTypes";
 
 
-export const addMovie = ( content: IMovie ) => ({
+export const addMovie = ( content: Movie ) => ({
     type: ADD_MOVIE,
     payload: content
 });
 
-export const removeMovie = ( content: IMovie ) => ({
+export const removeMovie = ( content: Movie ) => ({
     type: REMOVE_MOVIE,
     payload: content
 });
 
 const BASE_API_EP = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`;
-export const getMovies = (userQuery: any) => {
+export const getMovies = (userQuery: string) => {
     const url = `${BASE_API_EP}&s=${userQuery}`
     return async function ( dispatch: any ) {
         let response = await fetch(url);
