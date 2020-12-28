@@ -21,18 +21,3 @@ export const getMovies = (userQuery: string) => {
         dispatch({ type: FETCH_MOVIES, payload: json });            
     };
 };
-
-
-/*
-? Error Handling from useContext Provider Version
-switch (json.Response) {
-    case "True":
-        setResults(json.Search);
-        setTotalResults(json.totalResults);
-        break; 
-    default:
-        setTotalResults("0");
-        ? Render Msg for user on page
-        break;
-}; 
-*/
