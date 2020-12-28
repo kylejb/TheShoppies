@@ -4,7 +4,11 @@ import MovieList from "./MovieList";
 const SearchResults = (props: any) => {
     return (
         <div className="container-results">
-            <MovieList results={props.results} />
+            { props.results?.metaData?.totalResults 
+                ? props.results?.metaData?.totalResults + " Results" 
+                : null 
+            }
+            <MovieList results={props.results} nominated={props.nominated} />
         </div>
     );
 };
