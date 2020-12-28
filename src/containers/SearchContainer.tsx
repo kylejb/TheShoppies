@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
 import Search from "../components/Search";
 import SearchResults from "../components/SearchResults";
-import "../styles/containers/SearchContainer/style.scss";
 
 
 const SearchContainer = ( props: any ) => {

@@ -1,6 +1,5 @@
 import NominationContainer from "./NominationContainer";
 import SearchContainer from "./SearchContainer";
-import "../styles/containers/ShoppiesContainer/style.scss";
 
 
 const ShoppiesContainer = () => {

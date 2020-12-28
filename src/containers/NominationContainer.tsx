@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
 import { removeMovie } from "../redux/actionCreators";
 import NominationResults from "../components/NominationResults";
-import "../styles/containers/NominationContainer/style.scss";
 
 
 const NominationContainer = ( props: any ) => {
