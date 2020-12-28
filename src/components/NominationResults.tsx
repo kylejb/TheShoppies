@@ -8,6 +8,8 @@ const NominationResults = (props: any) => {
                 key={movie.imdbID} 
                 movie={movie} 
                 movieHandler={props.movieHandler}
+                btnDisabled={false}
+                btnLabel="Remove"
             />
         );
     });

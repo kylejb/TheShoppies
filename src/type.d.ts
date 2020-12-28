@@ -6,6 +6,8 @@ interface IMovieComProp {
         Year: string;
     };
     movieHandler: (movieObj: IMovieComProp["movie"]) => void;
+    btnDisabled?: boolean;
+    btnLabel?: string;
 };
 
 type Movie = {
