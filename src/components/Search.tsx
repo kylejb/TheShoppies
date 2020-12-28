@@ -3,11 +3,10 @@ import { getMovies } from "../redux/actionCreators";
 import { useEffect, useState } from "react";
 
 
-const Search = (props: any) => {
+const Search = ( { fetchMovies }: any ) => {
     const [query, setQuery] = useState("");
 
 
-    const fetchMovies = props.fetchMovies;
     useEffect(() => {
         if (query.length >= 3){
             fetchMovies(query);
@@ -26,7 +25,6 @@ const Search = (props: any) => {
                     onChange={(e: React.BaseSyntheticEvent) => setQuery(e.target.value)}
                     aria-label="Search OMDB API for movies by title"
                 />
-                {props?.results?.metaData?.totalResults} results
             </div>
         </>
     );
