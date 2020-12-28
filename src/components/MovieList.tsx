@@ -9,7 +9,7 @@ const MovieList = (props: any) => {
 
     const renderParsedMoviesAfterQuery = () => {
         return props.results.movies.map( (m: Movie) => {
-            if (nominatedMap.get(m.imdbID)) {
+            if (props.nominated.length >= 5 || nominatedMap.get(m.imdbID)) {
                 return (
                     <MovieCard
                         key={m.imdbID}
