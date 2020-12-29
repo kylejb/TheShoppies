@@ -2,29 +2,30 @@ import MovieCard from './MovieCard';
 import styled from "styled-components";
 
 
-const Div = styled.div`
-    position: relative;
-`;
+const NominationContainer = styled.div`
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;`;
 
 const NominationResults = (props: any) => {
     const renderNominated = props?.nominated?.map((movie: Movie) => {
         return (
-            <MovieCard 
+            <MovieCard
                 key={movie.imdbID} 
                 movie={movie} 
                 movieHandler={props.movieHandler}
                 btnDisabled={false}
-                btnLabel="Remove"
+                btnLabel="❌"
             />
         );
     });
 
     
     return (
-        <Div className="container-results">
+        <NominationContainer>
             <h1>Nomination Results</h1>
             { renderNominated }
-        </Div>
+        </NominationContainer>
     );
 };
 
