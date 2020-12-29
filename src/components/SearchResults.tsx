@@ -1,15 +1,17 @@
 import MovieList from "./MovieList";
+import styled from "styled-components";
 
+
+const SearchContainer = styled.div`
+    margin: 0 auto;
+    padding: 5px;
+`;
 
 const SearchResults = (props: any) => {
     return (
-        <div className="container-results">
-            { props.results?.metaData?.totalResults 
-                ? props.results?.metaData?.totalResults + " Results" 
-                : null 
-            }
+        <SearchContainer>
             <MovieList results={props.results} nominated={props.nominated} />
-        </div>
+        </SearchContainer>
     );
 };
 

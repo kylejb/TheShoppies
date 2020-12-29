@@ -1,5 +1,10 @@
 import MovieCard from './MovieCard';
+import styled from "styled-components";
 
+
+const Div = styled.div`
+    position: relative;
+`;
 
 const NominationResults = (props: any) => {
     const renderNominated = props?.nominated?.map((movie: Movie) => {
@@ -16,10 +21,10 @@ const NominationResults = (props: any) => {
 
     
     return (
-        <div className="container-results">
+        <Div className="container-results">
             <h1>Nomination Results</h1>
             { renderNominated }
-        </div>
+        </Div>
     );
 };
 

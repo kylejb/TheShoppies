@@ -1,6 +1,13 @@
 import { connect } from "react-redux";
 import { addMovie } from "../redux/actionCreators";
 import MovieCard from "./MovieCard";
+import styled from "styled-components";
+
+const MovieListContainer = styled.div`
+    display: flex;
+    position: relative;
+    max-width: auto;
+`;
 
 
 const MovieList = (props: any) => {
@@ -32,7 +39,7 @@ const MovieList = (props: any) => {
             };
         });
     };
-    return <>{renderParsedMoviesAfterQuery()}</>;
+    return <MovieListContainer>{renderParsedMoviesAfterQuery()}</MovieListContainer>;
 };
 
 
