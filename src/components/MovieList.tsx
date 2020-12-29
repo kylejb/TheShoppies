@@ -5,8 +5,8 @@ import styled from "styled-components";
 
 const MovieListContainer = styled.div`
     display: flex;
-    position: relative;
-    max-width: auto;
+    align-content: flex-start;
+    flex-wrap: wrap;
 `;
 
 
@@ -23,7 +23,7 @@ const MovieList = (props: any) => {
                         movie={m}
                         movieHandler={props.movieHandler}
                         btnDisabled={true}
-                        btnLabel="Nominate Me!"
+                        btnLabel="💚"
                     /> 
                 );
             } else {
@@ -33,7 +33,7 @@ const MovieList = (props: any) => {
                         movie={m}
                         movieHandler={props.movieHandler}
                         btnDisabled={false}
-                        btnLabel="Nominate Me!"
+                        btnLabel="💚"
                     />
                 );
             };
