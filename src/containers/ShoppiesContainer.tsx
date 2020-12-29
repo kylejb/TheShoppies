@@ -4,8 +4,7 @@ import SearchContainer from "./SearchContainer";
 
 const ShoppiesContainer = () => {
     return (
-        <div className="container">
-            <h1>Shoppies Container</h1>
+        <div className="wrapper-shoppies">
             <SearchContainer />
             <NominationContainer />
         </div>
