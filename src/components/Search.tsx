@@ -31,7 +31,7 @@ const Search = ( { results, fetchMovies }: any ) => {
             />
             <SpanResults>
                 { results?.metaData?.totalResults 
-                    ? results?.metaData?.totalResults + " Results" 
+                    ? results?.metaData?.totalResults + ` Results for "${query}"`
                     : null 
                 }
             </SpanResults>
