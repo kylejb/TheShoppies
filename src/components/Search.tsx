@@ -4,8 +4,16 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 
-const DivSearch = styled.div``;
-const SpanResults = styled.span``;
+const DivSearch = styled.div`
+    background-color: hsla(0,0%,100%,.85);
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+`;
+
+const DivResults = styled.div`
+    text-align: center;
+`;
 
 
 const Search = ( { results, fetchMovies }: any ) => {
@@ -37,9 +45,9 @@ const Search = ( { results, fetchMovies }: any ) => {
                 onChange={(e: React.BaseSyntheticEvent) => setQuery(e.target.value)}
                 aria-label="Search OMDB API for movies by title"
             />
-            <SpanResults>
+            <DivResults>
                 { renderConditionalQueryAttributes() }
-            </SpanResults>
+            </DivResults>
         </DivSearch>
     );
 };

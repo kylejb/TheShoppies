@@ -6,7 +6,18 @@ import NominationResults from "../components/NominationResults";
 const NominationContainer = ( props: any ) => {
     return (
         <div className="wrapper-nomination">
-            <NominationResults nominated={props.nominated} movieHandler={props.movieHandler} />
+            <h2 style={{textAlign: "center"}}>Nominations</h2>
+            { props.nominated.length 
+                ? (<NominationResults 
+                    nominated={props.nominated} 
+                    movieHandler={props.movieHandler} 
+                />)
+                : (<p 
+                        style={{textAlign: "center"}}
+                    >
+                        <em>No Results...</em>
+                    </p>)
+            }
         </div>
     );
 };
@@ -17,7 +28,7 @@ const mapStateToProps = (state: any) => {
 };
 
 const mapDispatchToProps = ( dispatch: any ) => {
-    return { movieHandler: ( movieObj: any ) => dispatch(removeMovie(movieObj))}
+    return { movieHandler: ( movieObj: any ) => dispatch(removeMovie(movieObj))};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(NominationContainer);

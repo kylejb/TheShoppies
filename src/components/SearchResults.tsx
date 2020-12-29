@@ -10,7 +10,11 @@ const SearchContainer = styled.div`
 const SearchResults = (props: any) => {
     return (
         <SearchContainer>
-            <MovieList results={props.results} nominated={props.nominated} />
+            <h2 style={{textAlign: "center"}}>Search Results</h2>
+            { props.results.movies.length 
+                ? <MovieList results={props.results} nominated={props.nominated} /> 
+                : <p style={{textAlign: "center"}}><em>No Results...</em></p>
+            }
         </SearchContainer>
     );
 };
