@@ -17,6 +17,14 @@ const Search = ( { results, fetchMovies }: any ) => {
             fetchMovies(query);
         }
     }, [query, fetchMovies]);
+    
+
+    const renderConditionalQueryAttributes = () => {
+        if (query.length < 3) {
+            return `${3 - query.length} more characters required to start your query...`;
+        }
+        return `${results?.metaData?.totalResults} results for "${query}":`;
+    }
 
 
     return (
@@ -30,10 +38,7 @@ const Search = ( { results, fetchMovies }: any ) => {
                 aria-label="Search OMDB API for movies by title"
             />
             <SpanResults>
-                { results?.metaData?.totalResults 
-                    ? results?.metaData?.totalResults + ` Results for "${query}"`
-                    : null 
-                }
+                { renderConditionalQueryAttributes() }
             </SpanResults>
         </DivSearch>
     );
