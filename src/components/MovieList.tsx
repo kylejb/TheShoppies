@@ -23,7 +23,7 @@ const MovieList = (props: any) => {
                         movie={m}
                         movieHandler={props.movieHandler}
                         btnDisabled={true}
-                        btnLabel="💚"
+                        btnLabel="🔒"
                     /> 
                 );
             } else {
@@ -33,7 +33,7 @@ const MovieList = (props: any) => {
                         movie={m}
                         movieHandler={props.movieHandler}
                         btnDisabled={false}
-                        btnLabel="💚"
+                        btnLabel="➕"
                     />
                 );
             };
