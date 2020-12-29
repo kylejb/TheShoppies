@@ -23,7 +23,6 @@ const NominationResults = (props: any) => {
     
     return (
         <NominationContainer>
-            <h1>Nomination Results</h1>
             { renderNominated }
         </NominationContainer>
     );

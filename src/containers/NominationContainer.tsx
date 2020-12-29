@@ -6,7 +6,6 @@ import NominationResults from "../components/NominationResults";
 const NominationContainer = ( props: any ) => {
     return (
         <div className="wrapper-nomination">
-            <h1>Nomination Container</h1>
             <NominationResults nominated={props.nominated} movieHandler={props.movieHandler} />
         </div>
     );
