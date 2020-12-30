@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import missingPosterTemplate from "../images/missingPosterTemplate_unuabona-unsplash.png";
 
 
 interface MovieCardProps {
@@ -13,7 +14,7 @@ const DivMovieCard = styled.div<MovieCardProps>`
     margin: 20px auto;
     width: 416px;
     height: 640px;
-    background: url(${(props: any) => props.moviePosterUrl});
+    background: url(${(props: any) => props.moviePosterUrl === "N/A" ? missingPosterTemplate : props.moviePosterUrl});
     background-position: center; 
     background-size: cover;
     border: 1px solid transparent;
@@ -56,6 +57,7 @@ const Button = styled.button`
 
 
 const MovieCard = ( { movie, movieHandler, btnDisabled, btnLabel }: IMovieComProp ) => {
+    console.log("POSTER", movie.Poster, typeof(movie.Poster))
     return (
         <>
         <DivMovieCard moviePosterUrl={movie.Poster}>
