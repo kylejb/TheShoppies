@@ -1,4 +1,6 @@
-# The Shoppies
+# The Shoppies 
+
+[The Shoppies](https://www.kyleburda.com/TheShoppies) is hosted on GitHub Pages.
 
 ## Movie awards for entrepreneurs
 
@@ -7,7 +9,12 @@ Shopify has branched out into movie award shows and we need your help. Please bu
 
 ## Setup/Installation Instructions
 
-- [Placeholder]
+- Clone down the repository to your computer and `cd` into the root directory.
+- Obtain your [free API key](https://www.omdbapi.com/apikey.aspx ) from OMDB.
+- Replace `123456` in `.env_example` with your newly obtained API key. 
+- Rename `.env_example` to `.env`
+- Run `npm install`
+- Finally, run `npm start` to spin up the application on your `localhost:3000/`.
 
 ## The Challenge
 
