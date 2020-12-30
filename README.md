@@ -30,16 +30,18 @@ This application was first built with complete functional components and hooks. 
 
 ## The Challenge
 
-My code challenge submission for Shopify's 2021 Summer Internship in consideration for a Frontend Development position.
+My code challenge submission for Shopify's 2021 Summer Internship in consideration for a Frontend Development position. 
 
-### Simple to use interface that makes it easy to:
+The requirements for the assignment are provided below:
+
+#### Simple to use interface that makes it easy to:
 
 - Search OMDB and display the results (movies only).
 - Add a movie from the search results to our nomination list.
-- View the list of films already nominated
-Remove a nominee from the nomination list.
+- View the list of films already nominated.
+- Remove a nominee from the nomination list.
 
-### Technical requirements:
+#### Additional requirements:
 
 - Search results should come from OMDB's API (free API key: http://www.omdbapi.com/apikey.aspx).
 - Each search result should list at least its title, year of release and a button to nominate that film.
