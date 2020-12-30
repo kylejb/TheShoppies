@@ -7,7 +7,7 @@
 Shopify has branched out into movie award shows and we need your help. Please build us an app to help manage our movie nominations for the upcoming Shoppies.
 
 
-## Setup/Installation Instructions
+## Local Installation Instructions
 
 - Clone down the repository to your computer and `cd` into the root directory.
 - Obtain your [free API key](https://www.omdbapi.com/apikey.aspx ) from OMDB.
