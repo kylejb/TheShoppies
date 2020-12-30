@@ -1,6 +1,7 @@
 {
-  "short_name": "The Shoppies",
-  "name": "The Shoppies",
+  "short_name": "Shoppies",
+  "name": "The Shoppies: Nominate your top five movies!",
+  "description": "Application to help Shopify manage movie nominations for the upcoming Shoppies.",
   "icons": [
     {
       "src": "favicon.ico",

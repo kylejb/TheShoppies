@@ -1,14 +1,23 @@
 import { connect } from "react-redux";
 import { removeMovie } from "../redux/actionCreators";
 import NominationResults from "../components/NominationResults";
-import "../styles/containers/NominationContainer/style.scss";
 
 
 const NominationContainer = ( props: any ) => {
     return (
         <div className="wrapper-nomination">
-            <h1>Nomination Container</h1>
-            <NominationResults nominated={props.nominated} movieHandler={props.movieHandler} />
+            <h2 style={{textAlign: "center"}}>Nominations</h2>
+            { props.nominated.length 
+                ? (<NominationResults 
+                    nominated={props.nominated} 
+                    movieHandler={props.movieHandler} 
+                />)
+                : (<p 
+                        style={{textAlign: "center"}}
+                    >
+                        <em>No Results...</em>
+                    </p>)
+            }
         </div>
     );
 };
@@ -19,7 +28,7 @@ const mapStateToProps = (state: any) => {
 };
 
 const mapDispatchToProps = ( dispatch: any ) => {
-    return { movieHandler: ( movieObj: any ) => dispatch(removeMovie(movieObj))}
+    return { movieHandler: ( movieObj: any ) => dispatch(removeMovie(movieObj))};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(NominationContainer);

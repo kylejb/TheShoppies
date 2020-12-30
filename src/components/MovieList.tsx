@@ -1,6 +1,13 @@
 import { connect } from "react-redux";
 import { addMovie } from "../redux/actionCreators";
 import MovieCard from "./MovieCard";
+import styled from "styled-components";
+
+const MovieListContainer = styled.div`
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+`;
 
 
 const MovieList = (props: any) => {
@@ -9,14 +16,14 @@ const MovieList = (props: any) => {
 
     const renderParsedMoviesAfterQuery = () => {
         return props.results.movies.map( (m: Movie) => {
-            if (nominatedMap.get(m.imdbID)) {
+            if (props.nominated.length >= 5 || nominatedMap.get(m.imdbID)) {
                 return (
                     <MovieCard
                         key={m.imdbID}
                         movie={m}
                         movieHandler={props.movieHandler}
                         btnDisabled={true}
-                        btnLabel="Nominate Me!"
+                        btnLabel="🔒"
                     /> 
                 );
             } else {
@@ -26,13 +33,17 @@ const MovieList = (props: any) => {
                         movie={m}
                         movieHandler={props.movieHandler}
                         btnDisabled={false}
-                        btnLabel="Nominate Me!"
+                        btnLabel="➕"
                     />
                 );
             };
         });
     };
-    return <>{renderParsedMoviesAfterQuery()}</>;
+    return (
+        <MovieListContainer>
+            { renderParsedMoviesAfterQuery() }
+        </MovieListContainer>
+    );
 };
 
 
