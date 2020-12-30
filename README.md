@@ -26,7 +26,7 @@ This application was first built with complete functional components and hooks. 
 - Replace `123456` in `.env_example` with your newly obtained API key. 
 - Rename `.env_example` to `.env`
 - Run `npm install`
-- Finally, run `npm start` to spin up the application on your [localhost:300/](http://localhost:3000/) in development mode.
+- Finally, run `npm start` to spin up the application on your [localhost:3000/](http://localhost:3000/) in development mode.
 
 ## The Challenge
 
