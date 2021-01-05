@@ -57,7 +57,6 @@ const Button = styled.button`
 
 
 const MovieCard = ( { movie, movieHandler, btnDisabled, btnLabel }: IMovieComProp ) => {
-    console.log("POSTER", movie.Poster, typeof(movie.Poster))
     return (
         <>
         <DivMovieCard moviePosterUrl={movie.Poster}>
