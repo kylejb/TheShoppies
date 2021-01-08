@@ -29,11 +29,12 @@ const SearchContainer = ({search, fetchMovies}: any) => {
         if (query.length < 3) {
             return `${3 - query.length} more characters required to start your query...`;
         }
-        return `${search?.metaData?.totalResults} results for "${query}":`;
+        return `${search?.metaData?.totalResults} results for "${query}"`;
     }
 
     return (
         <DivSearch>
+            <h3>Search Movie Title:</h3>
             <Search query={query} setQuery={setQuery} />
             {renderConditionalQueryAttributes()}
         </DivSearch>
