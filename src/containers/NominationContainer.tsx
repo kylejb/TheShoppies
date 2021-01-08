@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
-import { removeMovie } from "../redux/actionCreators";
-import NominationResults from "../components/NominationResults";
+import { removeMovie } from "redux/actionCreators";
+import NominationResults from "components/NominationResults";
 
 
 const NominationContainer = ( props: any ) => {
@@ -12,9 +12,7 @@ const NominationContainer = ( props: any ) => {
                     nominated={props.nominated} 
                     movieHandler={props.movieHandler} 
                 />)
-                : (<p 
-                        style={{textAlign: "center"}}
-                    >
+                : (<p style={{textAlign: "center"}}>
                         <em>No Results...</em>
                     </p>)
             }
