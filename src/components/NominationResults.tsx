@@ -2,13 +2,11 @@ import MovieCard from './MovieCard';
 import styled from "styled-components";
 
 
-const NominationContainer = styled.div`
-    display: flex;
-    align-content: flex-start;
-    flex-wrap: wrap;`;
+const StyledDiv = styled.div`
+`;
 
 const NominationResults = (props: any) => {
-    const renderNominated = props?.nominated?.map((movie: Movie) => {
+    const renderNominated = props.nominated.map((movie: Movie) => {
         return (
             <MovieCard
                 key={movie.imdbID} 
@@ -22,9 +20,13 @@ const NominationResults = (props: any) => {
 
     
     return (
-        <NominationContainer>
-            { renderNominated }
-        </NominationContainer>
+        <StyledDiv>
+            <h2 style={{textAlign: "center"}}>Nominated</h2>
+            { props.nominated.length 
+                ? renderNominated
+                : <p style={{textAlign: "center"}}><em>No Results...</em></p>
+            }
+        </StyledDiv>
     );
 };
 

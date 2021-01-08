@@ -1,4 +1,4 @@
-import ShoppiesContainer from "./containers/ShoppiesContainer";
+import HomePage from "./containers/HomePage/HomePage";
 import GlobalStyle from "./globalStyles";
 
 
@@ -6,7 +6,7 @@ const App = () => {
     return (
         <div className="app">
             <GlobalStyle />
-            <ShoppiesContainer />
+            <HomePage />
         </div>
     );
 };

@@ -1,5 +1,3 @@
-import { connect } from "react-redux";
-import { addMovie } from "../redux/actionCreators";
 import MovieCard from "./MovieCard";
 import styled from "styled-components";
 
@@ -45,10 +43,5 @@ const MovieList = (props: any) => {
         </MovieListContainer>
     );
 };
-
-
-const mapDispatchToProps = ( dispatch: any ) => {
-    return { movieHandler: ( movieObj: any ) => dispatch(addMovie(movieObj))}
-};
     
-export default connect(null, mapDispatchToProps)(MovieList);
+export default MovieList;

@@ -1,22 +1,43 @@
-import { connect } from "react-redux";
-import Banner from "../components/Banner";
-import Search from "../components/Search";
-import SearchResults from "../components/SearchResults";
+
+import Search from "components/Search";
+import { useEffect, useState } from "react";
+import styled from "styled-components";
+
+const DivSearch = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: hsla(0,0%,100%,.85);
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+`;
 
 
-const SearchContainer = ( props: any ) => {
+const SearchContainer = ({search, fetchMovies}: any) => {
+    const [query, setQuery] = useState("");
+
+
+    useEffect(() => {
+        if (query.length >= 3){
+            fetchMovies(query);
+        }
+    }, [query, fetchMovies]);
+    
+
+    const renderConditionalQueryAttributes = () => {
+        if (query.length < 3) {
+            return `${3 - query.length} more characters required to start your query...`;
+        }
+        return `${search?.metaData?.totalResults} results for "${query}":`;
+    }
+
     return (
-        <div className="wrapper-search">
-            <Search results={props.search} />
-            { props.nominated.length >= 5 ? <Banner /> : null }
-            <SearchResults results={props.search} nominated={props.nominated} />
-        </div>
+        <DivSearch>
+            <Search query={query} setQuery={setQuery} />
+            {renderConditionalQueryAttributes()}
+        </DivSearch>
     );
 };
 
-
-const mapStateToProps = (state: any) => {
-    return { search: state.search, nominated: state.movies.nominated };
-};
-
-export default connect(mapStateToProps)(SearchContainer);
+export default SearchContainer;
