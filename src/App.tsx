@@ -1,4 +1,4 @@
-import HomePage from "./containers/HomePage/HomePage";
+import HomePage from "pages/HomePage";
 import GlobalStyle from "./globalStyles";
 
 

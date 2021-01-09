@@ -1,27 +1,34 @@
 import { connect } from "react-redux";
 import { getMovies, addMovie, removeMovie } from "redux/actionCreators";
 import NominationResults from "components/NominationResults";
-import SearchContainer from "../SearchContainer";
+import SearchContainer from "containers/SearchContainer";
 import SearchResults from "components/SearchResults";
 import Banner from "components/Banner";
+import styled from "styled-components";
+
+const ResultsContainer = styled.div`
+    display: flex;
+`;
+
+const Wrapper = styled.div`
+`;
+
+const Title = styled.h1`
+    text-align: center;
+`;
+
 
 const HomePage = ({ fetchMovies, addMovie, removeMovie, search, nominated }: any) => {
     return (
-        <>
-            <h1 style={{textAlign: "center"}}>The Shoppies</h1>
+        <Wrapper>
+            <Title>The Shoppies</Title>
             { nominated.length >= 5 ? <Banner /> : null }
-            <div className="wrapper-shoppies">
                 <SearchContainer search={search} fetchMovies={fetchMovies} />
-                <div style={{display: "flex"}}>
-                    <div style={{flex: "50%"}}>
+                <ResultsContainer>
                         <SearchResults results={search} nominated={nominated} movieHandler={addMovie} />
-                    </div>
-                    <div style={{flex: "50%"}}>
                         <NominationResults nominated={nominated} movieHandler={removeMovie} />
-                    </div>
-                </div>
-            </div>
-        </>
+                </ResultsContainer>
+        </Wrapper>
     );
 };
 

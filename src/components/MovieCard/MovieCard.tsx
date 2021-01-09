@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import missingPosterTemplate from "../images/missingPosterTemplate_unuabona-unsplash.png";
+import missingPosterTemplate from "./missingPosterTemplate_unuabona-unsplash.png";
 
 
 interface MovieCardProps {
