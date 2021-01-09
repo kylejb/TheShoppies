@@ -3,7 +3,9 @@ import styled from "styled-components";
 
 
 const StyledDiv = styled.div`
+    flex: 50%;
 `;
+
 
 const NominationResults = (props: any) => {
     const renderNominated = props.nominated.map((movie: Movie) => {

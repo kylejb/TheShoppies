@@ -37,6 +37,8 @@ const MovieList = (props: any) => {
             };
         });
     };
+
+
     return (
         <MovieListContainer>
             { renderParsedMoviesAfterQuery() }
