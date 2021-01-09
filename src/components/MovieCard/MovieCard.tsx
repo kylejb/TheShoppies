@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import missingPosterTemplate from "../images/missingPosterTemplate_unuabona-unsplash.png";
+import missingPosterTemplate from "./missingPosterTemplate_unuabona-unsplash.png";
 
 
 interface MovieCardProps {
@@ -12,10 +12,9 @@ const DivMovieCard = styled.div<MovieCardProps>`
     flex-direction: column;
     justify-content: space-between;
     margin: 20px auto;
-    width: 416px;
-    height: 640px;
-    background: url(${(props: any) => props.moviePosterUrl === "N/A" ? missingPosterTemplate : props.moviePosterUrl});
-    background-position: center; 
+    width: 216px;
+    height: 320px;
+    background: url(${(props: any) => props.moviePosterUrl === "N/A" ? missingPosterTemplate : props.moviePosterUrl}) no-repeat center/contain;
     background-size: cover;
     border: 1px solid transparent;
     padding: 5px;
@@ -32,8 +31,7 @@ const DivMovieCardBottom = styled.div`
 
 const Label = styled.div`
     display: flex;
-    word-break: break-all;
-    white-space: nowrap;
+    word-wrap: break-word;
     align-items: center;
     border: 1px solid transparent;
     border-radius: 4px;
