@@ -4,6 +4,8 @@ import styled from "styled-components";
 
 const StyledDiv = styled.div`
     flex: 50%;
+    border: 1px solid black;
+    margin-left: 10px;
 `;
 
 

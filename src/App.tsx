@@ -1,13 +1,17 @@
 import HomePage from "pages/HomePage";
 import GlobalStyle from "./globalStyles";
+import styled from "styled-components";
 
+const AppWrapper = styled.div`
+    margin: 25px;
+`;
 
 const App = () => {
     return (
-        <div className="app">
+        <AppWrapper>
             <GlobalStyle />
             <HomePage />
-        </div>
+        </AppWrapper>
     );
 };
 

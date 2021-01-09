@@ -11,6 +11,8 @@ const DivSearch = styled.div`
     border-radius: 4px;
     padding: 20px;
     text-align: center;
+    border: 1px solid black;
+    margin-bottom: 20px;
 `;
 
 
