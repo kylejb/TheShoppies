@@ -2,9 +2,7 @@
 
 ###### The Shoppies was hosted on GitHub Pages from 12/29/2020 to 02/18/2021.
 
-My code challenge submission for Shopify's 2021 Summer Internship in consideration for a Frontend Development position.
-
-The requirements for the assignment are provided below:
+My code challenge submission for Shopify's 2021 Summer Internship in consideration for a Frontend Development position. The requirements for the assignment are provided below:
 
 #### Simple to use interface that makes it easy to:
 
@@ -29,7 +27,7 @@ The requirements for the assignment are provided below:
 - Replace `123456` in `.env_example` with your newly obtained API key.
 - Rename `.env_example` to `.env`
 - Run `npm install`
-- Finally, run `npm start` to spin up the application on your [localhost:3000/](http://localhost:3000/) in development mode.
+- Finally, run `npm start` to spin up the application on your [localhost:3000](http://localhost:3000/) in development mode.
 
 ---
 
